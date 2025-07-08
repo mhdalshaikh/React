@@ -10,7 +10,7 @@ function Register(){
             alert("Registered successfully");
         }
         catch(er){
-            alert("error");
+            alert(er.message);
         }
     };
     return(
