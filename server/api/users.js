@@ -62,7 +62,8 @@ router.post("/auth", async function(req,res){
     catch (ex){
         res.status(400).send(ex.message);
     }
-    router.get("/status",async function(req,res){
+},
+router.get("/status",async function(req,res){
         if(!req.headers["x-auth"]){
             return res.status(401).json(
                 {error:"Missing X-Auth header"}
@@ -88,5 +89,5 @@ router.post("/auth", async function(req,res){
 
 
 
-});
+);
 module.exports = router;
