@@ -6,7 +6,7 @@ function Register(){
     const handleSubmit = async e=> {
         e.preventDefault();
         try{
-            await axios.post("https://react-b6su.vercel.app/api/auth/register",form);
+            await axios.post("https://react-b6su.vercel.app/api/users/register",form);
             alert("Registered successfully");
         }
         catch(er){
