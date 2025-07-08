@@ -2,7 +2,7 @@ import React, {useState } from 'react';
 import axios from 'axios';
 
 function Register(){
-    const [form,setForm] = useState({username:'',password:''});
+    const [form,setForm] = useState({username:'',password:'',role:''});
     const handleSubmit = async e=> {
         e.preventDefault();
         try{
