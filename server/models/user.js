@@ -1,4 +1,4 @@
-const dv = require("../../server/db");
+const dv = require("../db");
 
 const User = db.model("User",{
 
