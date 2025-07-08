@@ -4,9 +4,9 @@ import axios from 'axios';
 function Register(){
     const [form,setForm] = useState({username:'',password:''});
     const handleSubmit = async e=> {
-        e.prevenDefault();
+        e.preventDefault();
         try{
-            await axios.post("https://react-nine-murex-34.vercel.app/api/auth/register",form);
+            await axios.post("https://react-b6su.vercel.app/api/auth/register",form);
             alert("Registered successfully");
         }
         catch(er){

@@ -6,7 +6,7 @@ password: '' });
 const handleSubmit = async e => {
 e.preventDefault();
 const res = await
-axios.post("https://react-nine-murex-34.vercel.app/api/auth/login",
+axios.post("https://react-b6su.vercel.app/api/auth/login",
 form);
 localStorage.setItem("token", res.data.token);
 window.location.href = "/dashboard";
