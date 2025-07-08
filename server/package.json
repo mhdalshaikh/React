@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.7",
     "express": "^5.1.0",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^8.16.2",
     "react-bootstrap": "^2.10.10"
   }
 }
