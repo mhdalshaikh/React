@@ -6,7 +6,7 @@ password: '' });
 const handleSubmit = async e => {
 e.preventDefault();
 const res = await
-axios.post("https://react-b6su.vercel.app/api/users/login",
+axios.post("https://react-xzhl.vercel.app/api/auth",
 form);
 localStorage.setItem("token", res.data.token);
 window.location.href = "/dashboard";
