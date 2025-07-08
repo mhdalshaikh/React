@@ -1,13 +1,15 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express =require("express");
+const bodyParser= require("body-parser");
 const User = require("./models/user");
 
 const app = express();
-const router = express.Router();
+const router=express.Router();
+router.use(bodyParser.urlencoded({extended:false}));
+router.use("/api",require("./api/users"));
+app.use(router)
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use("/api", require("./api/users"));
+const port= 5000 || process.env.PORT;
 
-app.use(router);
-
-module.exports = app; // ✅ export without app.listen()
+app.listen(port, () => {
+console.log("✅ Backend running on http://localhost:5000");
+});
