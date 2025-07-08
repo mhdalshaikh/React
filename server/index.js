@@ -1,18 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const userRoutes = require("./api/users");
+const User = require("./models/user");
 
 const app = express();
+const router = express.Router();
 
-// ✅ Use MongoDB Atlas connection string here
-mongoose.connect("mongodb+srv://mhdhosam44:26MrrIdttsIqJy6I@cluster0.enyesol.mongodb.net/");
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use("/api", require("./api/users"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(router);
 
-app.use("/api", userRoutes);
-
-// ✅ Important: do NOT call app.listen()
-// Instead, export the app:
-module.exports = app;
+module.exports = app; // ✅ export without app.listen()
