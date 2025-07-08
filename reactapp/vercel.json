@@ -1,16 +1,11 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "reactapp/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "reactapp/build" }
-    }
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "reactapp/package.json", "use": "@vercel/static-build" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/(.*)", "dest": "api/$1.js" },
+    { "src": "/(.*)", "dest": "reactapp/build/$1" }
   ]
 }
