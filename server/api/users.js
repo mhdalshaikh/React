@@ -51,7 +51,7 @@ router.post("/auth", async function (req, res) {
     }
 
     if (bcrypt.compareSync(password, user.password)) {
-      const token = jwt.encode({ username: user.username }, secret);
+      const token = jwt.encode({ username: user.username,role:user.role }, secret);
       res.json({ token });
     } else {
       res.status(401).json({ error: "Bad password" });
